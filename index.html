@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="img/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <title>Folhagem | Plantas, vasos e jardinagem</title>
+</head>
+<body>
+  <header id="topo">
+    <div class="topo__barra">
+      <a class="logo" href="index.html">
+        <img class="logo__imagem" src="img/logo.svg" alt="Folhagem, página inicial">
+      </a>
+
+      <form class="busca" id="form-busca" role="search" action="#">
+        <label class="visualmente-oculto" for="busca">Buscar produtos</label>
+        <input class="busca__entrada" type="search" id="busca" name="q" placeholder="Buscar plantas, vasos e mais">
+        <button class="busca__botao" type="submit" aria-label="Buscar">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg>
+        </button>
+      </form>
+
+      <div class="topo__acoes">
+        <a class="botao-icone" href="#" aria-label="Meus favoritos">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg>
+        </a>
+        <a class="botao-icone" href="login.html" aria-label="Entrar na minha conta">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </a>
+        <a class="botao-icone" href="#" aria-label="Meu carrinho">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.5 11h10L20 8H6.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="menu" aria-label="Categorias">
+      <ul class="menu__lista">
+        <li><a class="menu__link" href="#">Plantas</a></li>
+        <li><a class="menu__link" href="#">Vasos</a></li>
+        <li><a class="menu__link" href="#">Suculentas</a></li>
+        <li><a class="menu__link" href="#">Flores</a></li>
+        <li><a class="menu__link" href="#">Terra e adubo</a></li>
+        <li><a class="menu__link" href="#">Ferramentas</a></li>
+        <li><a class="menu__link" href="#">Decoração</a></li>
+        <li><a class="menu__link" href="#">Kits de presente</a></li>
+        <li><a class="menu__link" href="#ofertas">Ofertas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-label="Destaques da semana">
+      <div class="hero__painel hero__painel--texto">
+        <h1 id="hero-titulo">Mais verde na sua casa</h1>
+        <p class="hero__texto" id="hero-texto">Até 30% de desconto em folhagens e vasos.</p>
+        <a class="botao" href="#ofertas">Ver ofertas</a>
+      </div>
+      <div class="hero__painel hero__painel--meio" id="hero-meio" aria-hidden="true">🌿</div>
+      <div class="hero__painel hero__painel--direita" id="hero-direita" aria-hidden="true">🌵</div>
+
+      <button class="botao-icone seta seta--anterior" id="hero-anterior" type="button" aria-label="Banner anterior">
+        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="botao-icone seta seta--proxima" id="hero-proxima" type="button" aria-label="Próximo banner">
+        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+
+      <div class="hero__bolinhas">
+        <button class="bolinha" type="button" data-indice="0" aria-label="Ir para o banner 1" aria-current="true"></button>
+        <button class="bolinha" type="button" data-indice="1" aria-label="Ir para o banner 2"></button>
+        <button class="bolinha" type="button" data-indice="2" aria-label="Ir para o banner 3"></button>
+        <button class="bolinha" type="button" data-indice="3" aria-label="Ir para o banner 4"></button>
+        <button class="bolinha" type="button" data-indice="4" aria-label="Ir para o banner 5"></button>
+      </div>
+    </section>
+
+    <section class="vitrine" id="ofertas">
+      <div class="vitrine__cabecalho">
+        <h2>As mais pedidas</h2>
+        <p class="cartao__texto-suave">Fáceis de cuidar e queridinhas dos nossos clientes.</p>
+      </div>
+
+      <div class="vitrine__corpo">
+        <button class="botao-icone seta seta--anterior" id="lista-anterior" type="button" aria-label="Produtos anteriores">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+
+        <ul class="vitrine__lista" id="lista-produtos"></ul>
+        <p class="vitrine__status" id="vitrine-status" role="status"></p>
+
+        <button class="botao-icone seta seta--proxima" id="lista-proxima" type="button" aria-label="Próximos produtos">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <a class="voltar-topo" href="#topo" aria-label="Voltar ao topo da página">
+    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </a>
+  <template id="modelo-produto">
+    <li>
+      <article class="produto">
+        <div class="produto__imagem" aria-hidden="true"></div>
+        <button class="botao-icone produto__favorito" type="button" aria-pressed="false">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg>
+        </button>
+        <div class="produto__info">
+          <h3 class="produto__nome"></h3>
+          <p class="produto__descricao"></p>
+          <p class="produto__preco"></p>
+        </div>
+      </article>
+    </li>
+  </template>
+
+  <p class="visualmente-oculto" id="aviso" role="status"></p>
+
+  <script src="js/loja.js" defer></script>
+</body>
+</html>

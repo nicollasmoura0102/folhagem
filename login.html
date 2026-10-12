@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="img/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <title>Entrar na conta | Folhagem</title>
+</head>
+<body>
+  <main class="login">
+    <section class="login__formulario">
+      <div class="cartao">
+        <header class="cartao__cabecalho">
+          <img class="marca" src="img/simbolo.svg" alt="">
+          <h1>Entrar na Folhagem</h1>
+          <p class="cartao__texto-suave">Acesse sua conta para ver pedidos e favoritos.</p>
+        </header>
+
+        <form class="formulario" id="formulario-login" action="#" method="post" novalidate>
+          <div class="campo">
+            <label class="campo__rotulo" for="email">E-mail</label>
+            <input class="campo__entrada" type="email" id="email" name="email"
+                   placeholder="nome@exemplo.com" autocomplete="email" aria-describedby="erro-email" required>
+            <p class="campo__mensagem" id="erro-email" hidden></p>
+          </div>
+
+          <div class="campo">
+            <label class="campo__rotulo" for="senha">Senha</label>
+            <input class="campo__entrada" type="password" id="senha" name="senha"
+                   autocomplete="current-password" minlength="8" aria-describedby="erro-senha" required>
+            <p class="campo__mensagem" id="erro-senha" hidden></p>
+          </div>
+
+          <p class="formulario__ajuda">
+            <a class="link" href="#">Esqueci minha senha</a>
+          </p>
+
+          <button class="botao botao--bloco" id="botao-entrar" type="submit">Entrar</button>
+          <p class="formulario__status" id="status-login" role="status"></p>
+        </form>
+
+        <p class="divisor">ou</p>
+
+        <div class="opcoes-sociais">
+          <button class="botao botao--contorno botao--bloco" type="button">Continuar com Google</button>
+          <button class="botao botao--contorno botao--bloco" type="button">Continuar com Facebook</button>
+        </div>
+
+        <footer class="cartao__rodape">
+          <p>Ainda não tem conta? <a class="link" href="#">Criar conta</a></p>
+          <p class="cartao__texto-suave">Ao entrar, você concorda com os termos de uso.</p>
+        </footer>
+      </div>
+    </section>
+
+    <aside class="login__painel">
+      <p class="login__frase">Plantas que dão vida à sua casa.</p>
+    </aside>
+  </main>
+  <script src="js/login.js" defer></script>
+</body>
+</html>

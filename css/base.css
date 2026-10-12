@@ -1,0 +1,113 @@
+/* ===== BASE ===== */
+
+:root {
+  /* Cores */
+  --cor-primaria: #1e5e4b;
+  --cor-primaria-escura: #174a3b;
+  --cor-primaria-ativa: #11392e;
+  --cor-texto: #1b2a25;
+  --cor-texto-suave: #4a5c55;
+  --cor-fundo: #f6f8f7;
+  --cor-superficie: #ffffff;
+  --cor-superficie-suave: #e8f0ec;
+  --cor-borda: #d3dcd8;
+  --cor-borda-forte: #7c8c85;
+  --cor-erro: #b3261e;
+  --cor-foco: #0b6bcb;
+  --cor-painel: #17372d;
+  --cor-texto-painel: #ffffff;
+  --cor-banner-1: #cfe3d8;
+  --cor-banner-2: #b7d4c5;
+  --cor-banner-3: #dce9e3;
+
+  /* Fonte */
+  --fonte: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* Espaçamento*/
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 40px;
+  --esp-6: 48px;
+  --esp-8: 64px;
+
+  /* Outros */
+  --raio: 10px;
+  --raio-grande: 16px;
+  --duracao: 0.5s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  max-width: 65ch;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+svg {
+  display: block;
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+/* Foco */
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+/* Texto só para leitores de tela */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}

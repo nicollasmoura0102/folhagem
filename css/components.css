@@ -1,0 +1,473 @@
+/* ===== COMPONENTES ===== */
+
+/* ---------- Ícones ---------- */
+.icone {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Marca ---------- */
+.marca {
+  width: 56px;
+  height: 56px;
+}
+ 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+ 
+.logo__imagem {
+  width: auto;
+  height: 40px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ---------- Links ---------- */
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: var(--cor-primaria-escura);
+}
+
+.link:active {
+  color: var(--cor-primaria-ativa);
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--cor-texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu__link:hover {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--raio);
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-painel);
+  font-size: 25px;
+  border: 1px solid var(--cor-primaria);
+  font-weight: 600;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--duracao);
+}
+
+.botao:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.botao:active {
+  background-color: var(--cor-primaria-ativa);
+  transform: translateY(1px);
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.botao--contorno {
+  border-color: var(--cor-borda-forte);
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.botao--contorno:hover {
+  background-color: var(--cor-superficie-suave);
+}
+
+.botao--contorno:active {
+  background-color: var(--cor-banner-1);
+}
+
+.botao--bloco {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+/* Botões redondos só com ícone */
+.botao-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: 50%;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  cursor: pointer;
+  transition: transform var(--duracao);
+}
+
+.botao-icone:hover {
+  background-color: var(--cor-superficie-suave);
+}
+
+.botao-icone:active {
+  background-color: var(--cor-banner-1);
+  transform: scale(0.95);
+}
+
+.botao-icone:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.seta {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Bolinhas do banner */
+.bolinha {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.bolinha::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--cor-primaria);
+  opacity: 0.35;
+  transition: opacity var(--duracao);
+}
+
+.bolinha:hover::before,
+.bolinha[aria-current="true"]::before {
+  opacity: 1;
+}
+
+.voltar-topo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--raio);
+  background-color: var(--cor-painel);
+  color: var(--cor-texto-painel);
+  transition: transform var(--duracao);
+}
+
+.voltar-topo:hover {
+  background-color: var(--cor-primaria);
+}
+
+.voltar-topo:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Formulário ---------- */
+.cartao {
+  display: grid;
+  gap: var(--esp-3);
+  width: 100%;
+  max-width: 400px;
+  padding: var(--esp-4) var(--esp-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-grande);
+  background-color: var(--cor-superficie);
+}
+
+.cartao__cabecalho {
+  display: grid;
+  justify-items: center;
+  gap: var(--esp-1);
+  text-align: center;
+}
+
+.cartao__cabecalho .marca {
+  margin-bottom: var(--esp-1);
+}
+
+.cartao__texto-suave {
+  color: var(--cor-texto-suave);
+}
+
+.cartao__rodape {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.formulario {
+  display: grid;
+  gap: var(--esp-2);
+}
+
+.campo {
+  display: grid;
+  gap: var(--esp-1);
+}
+
+.campo__rotulo {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.campo__entrada {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--esp-2);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  font: inherit;
+}
+
+.campo__entrada:hover {
+  border-color: var(--cor-texto);
+}
+
+.campo__entrada:focus {
+  border-color: var(--cor-primaria);
+}
+
+/* Erro */
+.campo__entrada:user-invalid {
+  border-color: var(--cor-erro);
+  box-shadow: inset 0 0 0 1px var(--cor-erro);
+}
+
+.campo__entrada:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formulario__ajuda {
+  text-align: right;
+}
+
+.opcoes-sociais {
+  display: grid;
+  gap: var(--esp-1);
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  color: var(--cor-texto-suave);
+  font-size: 0.875rem;
+}
+
+.divisor::before,
+.divisor::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--cor-borda);
+}
+
+.login__frase {
+  max-width: 14ch;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ---------- Busca ---------- */
+.busca {
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio);
+  background-color: var(--cor-superficie);
+}
+
+.busca:hover {
+  border-color: var(--cor-texto);
+}
+
+.busca:focus-within {
+  border-color: var(--cor-primaria);
+}
+
+.busca__entrada {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 var(--esp-2);
+  border: 0;
+  background: none;
+  color: var(--cor-texto);
+  font: inherit;
+}
+
+.busca__botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.busca__botao:hover {
+  color: var(--cor-primaria);
+}
+
+/* ---------- Banner ---------- */
+.hero__painel {
+  place-items: center;
+  background-color: var(--cor-banner-1);
+  font-size: 5rem;
+}
+
+.hero__painel--meio {
+  background-color: var(--cor-banner-2);
+}
+.hero__painel--direita {
+  background-color: var(--cor-banner-3);
+}
+
+.hero__texto {
+  color: var(--cor-texto-suave);
+  font-size: 1.125rem;
+}
+
+/* ---------- Produtos ---------- */
+.produto {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-grande);
+  background-color: var(--cor-superficie);
+}
+
+.produto__imagem {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background-color: var(--cor-superficie-suave);
+  font-size: 4rem;
+}
+
+.produto__favorito {
+  position: absolute;
+  top: var(--esp-1);
+  right: var(--esp-1);
+}
+
+.produto__favorito[aria-pressed="true"] .icone {
+  fill: var(--cor-erro);
+  stroke: var(--cor-erro);
+}
+
+.produto__info {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: var(--esp-2);
+}
+
+.produto__nome {
+  font-size: 1rem;
+}
+
+.produto__descricao {
+  color: var(--cor-texto-suave);
+  font-size: 0.875rem;
+}
+
+.produto__preco {
+  margin-top: var(--esp-1);
+  color: var(--cor-primaria);
+  font-weight: 700;
+}
+
+/* ---------- Mensagens e estados ---------- */
+.campo__mensagem {
+  color: var(--cor-erro);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.campo__entrada[aria-invalid="true"] {
+  border-color: var(--cor-erro);
+  box-shadow: inset 0 0 0 1px var(--cor-erro);
+}
+
+.formulario__status {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.formulario__status--sucesso {
+  color: var(--cor-primaria);
+}
+.formulario__status--erro {
+  color: var(--cor-erro);
+}
+
+.vitrine__status {
+  padding: var(--esp-3) 0;
+  margin: 0 auto;
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+/* Temas do banner */
+.hero--tema-2 {
+  --cor-banner-1: #f1e4cc;
+  --cor-banner-2: #e6d2ac;
+  --cor-banner-3: #f6ecda;
+}
+
+.hero--tema-3 {
+  --cor-banner-1: #d6e4ee;
+  --cor-banner-2: #bfd3e2;
+  --cor-banner-3: #e3edf4;
+}

@@ -1,0 +1,235 @@
+/* ===== LAYOUT ===== */
+
+/* ---------- Login ---------- */
+.login {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+.login__formulario {
+  display: grid;
+  place-items: center;
+  padding: var(--esp-3) var(--esp-2);
+}
+
+.login__painel {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .login {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .login__painel {
+    display: flex;
+    align-items: flex-end;
+    padding: var(--esp-6);
+    background-color: var(--cor-painel);
+    color: var(--cor-texto-painel);
+  }
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo__barra {
+  display: grid;
+  grid-template-areas:
+    "logo acoes"
+    "busca busca";
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-2);
+  background-color: var(--cor-superficie);
+}
+
+.topo__barra .logo {
+  grid-area: logo;
+}
+.topo__barra .busca {
+  grid-area: busca;
+}
+
+.topo__acoes {
+  grid-area: acoes;
+  display: flex;
+  gap: var(--esp-1);
+}
+
+@media (min-width: 768px) {
+  .topo__barra {
+    grid-template-areas: "logo busca acoes";
+    grid-template-columns: 200px 1fr auto;
+    padding: var(--esp-2) var(--esp-4);
+  }
+
+  .topo__barra .busca {
+    justify-self: center;
+  }
+}
+
+/* ---------- Menu de categorias ---------- */
+.menu {
+  overflow-x: auto;
+  background-color: var(--cor-superficie-suave);
+}
+
+.menu__lista {
+  display: flex;
+  gap: var(--esp-3);
+  padding: 0 var(--esp-2);
+  white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  .menu__lista {
+    justify-content: center;
+  }
+}
+
+/* ---------- Banner principal ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 320px;
+}
+
+.hero__painel--meio,
+.hero__painel--direita {
+  display: none;
+}
+
+.hero__painel--texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--esp-2);
+  padding: var(--esp-4) var(--esp-3) var(--esp-8);
+}
+
+.hero__bolinhas {
+  position: absolute;
+  bottom: var(--esp-1);
+  left: 50%;
+  display: flex;
+  transform: translateX(-50%);
+}
+
+.hero .seta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 380px;
+  }
+
+  .hero__painel--meio {
+    display: grid;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 400px;
+  }
+
+  .hero__painel--direita {
+    display: grid;
+  }
+
+  .hero .seta {
+    display: inline-flex;
+    top: 50%;
+    margin-top: -22px;
+  }
+
+  .hero .seta--anterior {
+    left: var(--esp-3);
+  }
+  .hero .seta--proxima {
+    right: var(--esp-3);
+  }
+}
+
+/* ---------- Vitrine de produtos ---------- */
+.vitrine {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--esp-5) var(--esp-2);
+}
+
+.vitrine__cabecalho {
+  display: grid;
+  justify-items: center;
+  gap: var(--esp-1);
+  margin-bottom: var(--esp-3);
+  text-align: center;
+}
+
+.vitrine__corpo {
+  position: relative;
+}
+
+
+.vitrine__lista {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  gap: var(--esp-2);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--esp-1);
+}
+
+.vitrine__lista > li {
+  scroll-snap-align: start;
+  display: grid;
+}
+
+.vitrine .seta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .vitrine__lista {
+    grid-auto-columns: 30%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vitrine {
+    padding: var(--esp-5) var(--esp-8);
+  }
+
+  .vitrine__lista {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--esp-3);
+    overflow: visible;
+  }
+
+  .vitrine .seta {
+    display: inline-flex;
+    top: 35%;
+  }
+
+  .vitrine .seta--anterior {
+    left: calc(var(--esp-5) * -1);
+  }
+  .vitrine .seta--proxima {
+    right: calc(var(--esp-5) * -1);
+  }
+}
+
+/* ---------- Botão flutuante ---------- */
+.voltar-topo {
+  position: fixed;
+  right: var(--esp-2);
+  bottom: var(--esp-2);
+}
