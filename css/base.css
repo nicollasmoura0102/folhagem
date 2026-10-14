@@ -1,29 +1,31 @@
-/* ===== BASE ===== */
+/* ===== BASE: reset mínimo, variáveis e tipografia ===== */
 
 :root {
-  /* Cores */
-  --cor-primaria: #1e5e4b;
-  --cor-primaria-escura: #174a3b;
-  --cor-primaria-ativa: #11392e;
-  --cor-texto: #1b2a25;
-  --cor-texto-suave: #4a5c55;
-  --cor-fundo: #f6f8f7;
-  --cor-superficie: #ffffff;
-  --cor-superficie-suave: #e8f0ec;
-  --cor-borda: #d3dcd8;
-  --cor-borda-forte: #7c8c85;
-  --cor-erro: #b3261e;
-  --cor-foco: #0b6bcb;
-  --cor-painel: #17372d;
-  --cor-texto-painel: #ffffff;
-  --cor-banner-1: #cfe3d8;
-  --cor-banner-2: #b7d4c5;
-  --cor-banner-3: #dce9e3;
+  /* Cores (nomeadas pela função) */
+  --cor-primaria: #e4ff8f;
+  --cor-primaria-hover: #f1ffc2;
+  --cor-primaria-ativa: #cfe87a;
+  --cor-sobre-primaria: #0b0b12;
+  --cor-texto: #f4f4f8;
+  --cor-texto-suave: #a9a9c0;
+  --cor-fundo: #07070c;
+  --cor-superficie: #11111a;
+  --cor-superficie-suave: #1a1a26;
+  --cor-borda: #2a2a3a;
+  --cor-borda-forte: #6b6b86;
+  --cor-erro: #ff8a80;
+  --cor-foco: #7cc4ff;
+  --cor-painel: #e4ff8f;
+  --cor-texto-painel: #0b0b12;
+  --cor-banner-1: #1c2412;
+  --cor-banner-2: #263316;
+  --cor-banner-3: #2f3d1b;
 
-  /* Fonte */
-  --fonte: "Plus Jakarta Sans", system-ui, sans-serif;
+  /* Fontes */
+  --fonte: "Inter", system-ui, sans-serif;
+  --fonte-titulo: "Archivo Black", "Inter", system-ui, sans-serif;
 
-  /* Espaçamento*/
+  /* Escala de espaçamento (múltiplos de 8) */
   --esp-1: 8px;
   --esp-2: 16px;
   --esp-3: 24px;
@@ -33,9 +35,16 @@
   --esp-8: 64px;
 
   /* Outros */
-  --raio: 10px;
+  --raio: 8px;
   --raio-grande: 16px;
-  --duracao: 0.5s ease;
+  --duracao: 200ms;
+}
+
+/* Quem prefere menos movimento fica sem transições */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duracao: 0ms;
+  }
 }
 
 *,
@@ -57,21 +66,22 @@ body {
 }
 
 h1,
-h2,
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 h3 {
   line-height: 1.25;
   font-weight: 700;
 }
 
-h1 {
-  font-size: 1.75rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1rem;
-}
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1rem; }
 
 p {
   max-width: 65ch;
@@ -90,7 +100,7 @@ a {
   color: var(--cor-primaria);
 }
 
-/* Foco */
+/* Foco sempre visível para quem usa teclado */
 :focus-visible {
   outline: 3px solid var(--cor-foco);
   outline-offset: 2px;
@@ -107,7 +117,5 @@ a {
 }
 
 @media (min-width: 1280px) {
-  h1 {
-    font-size: 2.25rem;
-  }
+  h1 { font-size: 2.25rem; }
 }

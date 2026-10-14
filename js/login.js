@@ -1,6 +1,6 @@
 // ===== Tela de login: validação e feedback =====
 
-const SENHA_DE_TESTE = "folhagem123"; // só para a demonstração (não há back-end)
+const SENHA_DE_TESTE = "trama1234"; // só para a demonstração (não há back-end)
 
 const formulario = document.querySelector("#formulario-login");
 const campoEmail = document.querySelector("#email");
