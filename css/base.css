@@ -7,7 +7,8 @@
   --cor-sobre-primaria: #0b0b12;
   --cor-texto: #f4f4f8;
   --cor-texto-suave: #a9a9c0;
-  --cor-fundo: #07070c;
+  --cor-fundo: #fafafa;
+  --cor-fundo-produto: #f4f4f9;
   --cor-superficie: #11111a;
   --cor-superficie-suave: #1a1a26;
   --cor-borda: #2a2a3a;
@@ -20,8 +21,9 @@
   --cor-banner-2: #263316;
   --cor-banner-3: #2f3d1b;
 
+  --fonte-titulo: "hoss-round-xnarrow", sans-serif;
   --fonte: "Inter", system-ui, sans-serif;
-  --fonte-titulo: "Archivo Black", "Inter", system-ui, sans-serif;
+
 
   --esp-1: 8px;
   --esp-2: 16px;
@@ -57,8 +59,8 @@ body {
 h1,
 h2 {
   font-family: var(--fonte-titulo);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -68,9 +70,17 @@ h3 {
   font-weight: 700;
 }
 
-h1 { font-size: 28px; }
-h2 { font-size: 24px; }
-h3 { font-size: 16px; }
+h1 {
+  font-size: 28px; 
+}
+
+h2 { font-size: 36px;     
+  color: var(--cor-texto-painel);
+}
+
+h3 { 
+  font-size: 16px; 
+}
 
 p {
   max-width: 656px;

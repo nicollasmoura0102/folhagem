@@ -214,6 +214,15 @@
   .vitrine .seta {
     display: inline-flex;
     top: 35%;
+    border: 1px solid var(--cor-primaria);
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-painel);
+  }
+
+  .vitrine .seta:hover {
+    border-color: var(--cor-texto-painel);
+    background-color: var(--cor-texto-painel);
+    color: var(--cor-primaria);
   }
 
   .vitrine .seta--anterior { left: calc(var(--esp-5) * -1); }
