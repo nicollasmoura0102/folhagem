@@ -13,8 +13,11 @@
 
 /* ---------- Marca ---------- */
 .marca {
-  width: 56px;
-  height: 56px;
+  background: var(--cor-superficie);
+  padding: var(--esp-1);
+  width: 60px;
+  height: 60px;
+  overflow: visible;
 }
 
 .logo {
@@ -38,6 +41,7 @@
   align-items: center;
   min-height: 44px;
   font-weight: 600;
+  color: var(--cor-texto-painel);
 }
 
 .link:hover {
@@ -49,6 +53,7 @@
 }
 
 .menu__link {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 48px;
@@ -60,6 +65,25 @@
 
 .menu__link:hover {
   color: var(--cor-primaria);
+}
+
+.menu__link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 20px;
+    background-color: var(--cor-primaria);
+    bottom: 7px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: var(--duracao);
+}
+
+.menu__link:hover:before {
+    width: 80%;
+    transition: var(--duracao);
 }
 
 /* ---------- Botões ---------- */
@@ -204,7 +228,7 @@
   padding: var(--esp-4) var(--esp-3);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-grande);
-  background-color: var(--cor-superficie);
+  background-color: var(--cor-fundo);
 }
 
 .cartao__cabecalho {
@@ -218,8 +242,16 @@
   margin-bottom: var(--esp-1);
 }
 
+.cartao__cabecalho h1 {
+  color: var(--cor-texto-painel);
+}
+
 .cartao__texto-suave {
   color: var(--cor-texto-suave);
+}
+
+.cartao__texto-painel {
+  color: var(--cor-texto-painel);
 }
 
 .cartao__rodape {
@@ -242,6 +274,7 @@
 .campo__rotulo {
   font-size: 14px;
   font-weight: 600;
+  color: var(--cor-texto-painel);
 }
 
 .campo__entrada {
@@ -251,12 +284,12 @@
   border: 1px solid var(--cor-borda-forte);
   border-radius: var(--raio);
   background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  color: var(--cor-texto-painel);
   font: inherit;
 }
 
 .campo__entrada:hover {
-  border-color: var(--cor-texto);
+  border-color: var(--cor-texto-painel);
 }
 
 .campo__entrada:focus {
@@ -276,6 +309,7 @@
 
 .formulario__ajuda {
   text-align: right;
+  color: var(--cor-texto-painel);
 }
 
 .opcoes-sociais {
@@ -300,9 +334,10 @@
 }
 
 .login__frase {
-  max-width: 340px;
+  max-width: 400px;
   font-family: var(--fonte-titulo);
-  font-size: 48px;
+  font-size: 80px;
+  font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -364,7 +399,7 @@
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 80px;
 }
 
 .hero__painel--meio { background-color: var(--cor-banner-2); }
@@ -381,16 +416,15 @@
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;
-  border: 1px solid var(--cor-borda);
   border-radius: var(--raio-grande);
-  background-color: var(--cor-superficie);
+  background-color: var(--cor-fundo);
 }
 
 .produto__imagem {
   display: grid;
   place-items: center;
   aspect-ratio: 1;
-  background-color: var(--cor-superficie-suave);
+  background-color: var(--cor-texto);
   font-size: 64px;
 }
 
@@ -398,6 +432,8 @@
   position: absolute;
   top: var(--esp-1);
   right: var(--esp-1);
+  border: 1px solid var(--cor-primaria);
+  background-color: var(--cor-primaria);
 }
 
 .produto__favorito[aria-pressed="true"] .icone {
@@ -413,17 +449,20 @@
 }
 
 .produto__nome {
-  font-size: 16px;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--cor-texto-painel);
 }
 
 .produto__descricao {
-  color: var(--cor-texto-suave);
+  color: var(--cor-texto-painel);
   font-size: 14px;
 }
 
 .produto__preco {
   margin-top: var(--esp-1);
-  color: var(--cor-primaria);
+  color: var(--cor-texto-painel);
   font-weight: 700;
 }
 
@@ -442,6 +481,7 @@
 .formulario__status {
   font-size: 14px;
   font-weight: 600;
+  color: var(--cor-texto-painel);
 }
 
 .formulario__status--sucesso { color: var(--cor-primaria); }
@@ -478,13 +518,14 @@
 }
 
 .filtro:hover {
-  background-color: var(--cor-superficie-suave);
+  background-color: var(--cor-primaria);
+  color: var(--cor-sobre-primaria);
+  border: 1px solid var(--cor-primaria);
 }
 
 .filtro:active {
   transform: scale(0.97);
 }
-
 
 .filtro[aria-pressed="true"] {
   border-color: var(--cor-primaria);
@@ -498,7 +539,7 @@
 
 /* ---------- Avaliação e tamanhos ---------- */
 .produto__avaliacao {
-  color: var(--cor-primaria);
+  color: var(--cor-texto-painel);
   font-size: 14px;
   font-weight: 600;
 }
